@@ -5,7 +5,10 @@ const auth = '/auth'
 const users = '/users'
 
 const urls = {
-    cars,
+    cars: {
+        base: cars,
+        photoById: (id: number): string => `${cars}/${id}/photo`
+    },
     auth: {
         login: auth,
         refresh: `${auth}/refresh`,
